@@ -108,5 +108,6 @@ Run the application from parcel_browse folder using
 ## References
 
 * [Head First Python](https://www.oreilly.com/library/view/head-first-python/9781491919521/)
+* [DataTables](https://datatables.net/)
 * [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
 * [MySQL Documentation](https://dev.mysql.com/doc/)
