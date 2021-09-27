@@ -111,3 +111,6 @@ Run the application from parcel_browse folder using
 * [DataTables](https://datatables.net/)
 * [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
 * [MySQL Documentation](https://dev.mysql.com/doc/)
+
+## Caution
+The requirements.txt file does not contain the libraries used in insert_*_to_mysql.py files.
