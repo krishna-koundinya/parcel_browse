@@ -24,7 +24,7 @@ mycursor = mydb.cursor()
 
 # Creation of table 'landuse' in the database
 """
-CREATE TABLE parcel(   id VARCHAR(256)  PRIMARY KEY,
+CREATE TABLE landuse(   id VARCHAR(256)  PRIMARY KEY,
                        parcel_number VARCHAR(128),
                        building_sqft DOUBLE,
                        year_built INT,
