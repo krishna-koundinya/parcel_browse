@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" />
+        <title>Browse Parcels</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+      <div style="text-align: center">
+        {{ pagination.links }}
+      </div>
+        <div class="container">
+            <br />
+            <h2 align="center">Browse Parcels</h2><br />
+            <form action="{{ url_for('index') }}", method="POST">
+              <select name="zoning_select" id="zoning_select" class="form-control">
+                <option value="">Select Zoning</option>
+                {% for row in zoning %}
+                  <option value="{{row.zoning}}">{{row.zoning}}</option>   
+                {% endfor %}
+              </select>
+
+              <select name="landuse_select" id="landuse_select" class="form-control">
+                <option value="">Select Landuse</option>
+                {% for row in landuse %}
+                    <option value="{{row.landuse}}">{{row.landuse}}</option>    
+                {% endfor %}
+              </select>
+              <input type="submit" value="Submit" class="form-control" style="color:#1E90FF">
+
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                     
+                        <tr>
+                            <th>ID</th>
+                            <th>Parcel Number</th>
+                            <th>Address</th>
+                            <th>Zoning</th>
+                            <th>Building Area</th>
+                            <th>Year Built</th>
+                            <th>Land Use</th>                            
+                        </tr>
+                    </thead>
+                    {% for row in parcels %}  
+                      <tr>
+                          <td>{{row.id}}</td>
+                          <td>{{row.parcel_number}}</td>
+                          <td>{{row.address}}</td>
+                          <td>{{row.zoning}}</td>
+                          <td>{{row.building_sqft}}</td>
+                          <td>{{row.year_built}}</td>
+                          <td>{{row.landuse}}</td>
+                      </tr>
+                      {% endfor %} 
+                    <tbody>
+                    </tbody>
+                </table>
+                
+            </div>
+            <br />
+            <br />
+            <br />
+        </div>
+        <div style="text-align: center">
+          {{ pagination.links }}
+        </div>
+
+</body>
+</html>
